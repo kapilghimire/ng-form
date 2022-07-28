@@ -1,0 +1,27 @@
+For template driven forms we need
+
+import {FormsModule} from '@angular/forms'
+
+Registirng Forms FormsModule to NgModule
+
+import { FormsModule } from '@angular/forms';
+@NgModule({
+  declarations: [
+    ..........
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+Changes made by angular on html form element
+<form novalidate="" class="ng-untouched ng-pristine ng-valid">
+<input type="text"><button>OK</button>
+</form>
+
+installing external library in angular
+npm install --save <library-name>
