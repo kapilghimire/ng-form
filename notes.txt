@@ -25,3 +25,35 @@ Changes made by angular on html form element
 
 installing external library in angular
 npm install --save <library-name>
+
+using ngFrom to print form status
+<form #form="ngFrom">
+.......
+</form>
+{{ form | json }}
+
+ngModel and ngForm directive are part of
+
+FormsModule from "@angular/forms"
+
+print value of input text inside form with template reference variable
+
+<form #form="ngForm">
+<div class="form-group">
+      <label for="name">Name</label>
+      <input id="name" name="name" class="form-control" ngModel/>
+    </div>
+ ----- other form elemens
+</div>
+{{ forms.value | json}}
+
+NOTE: use of directive ngModel
+
+directive use to connect ngForm template variable to inputs values
+ngModel
+
+ngForm directive propertiy to get value on input binded witn ngModel directive
+{{form.value | json}}
+<form #form="ngForm">
+  <input id="name" name="name" class="form-control" ngModel/>
+
