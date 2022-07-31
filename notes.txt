@@ -1,3 +1,8 @@
+Branches:
+  Master
+  NgModel
+
+
 For template driven forms we need
 
 import {FormsModule} from '@angular/forms'
