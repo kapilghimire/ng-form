@@ -74,3 +74,29 @@ ToDo :
  Create form submittion with using form template variable, one way binding , no [(ngModel)]
 
  Create form submittion with toway data binding with [(ngModel)]
+
+
+only one difference between one way binding and two way binding
+extra baanana in box syntax for [(ngModel)]
+
+html for one way binding and two way bindinging in form
+<input id="name" name="name" class="form-control" [(ngModel)] = "userSettings.name"/>
+<input id="name" name="name" class="form-control" ngModel/>
+
+important html propery for one way and two way form binding
+name propertiy of html
+
+making copy of original data to restore if user presses cancel or restore
+originalUserSetting: UserSettings={
+  'name':'Miltion'
+}
+userSettings:UserSettings={
+  ...this.originalUserSetting
+}
+
+spread operator only provides
+copying of flat object
+
+deep clone of object
+use loaddash library
+
