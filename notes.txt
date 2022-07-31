@@ -4,6 +4,7 @@ Branches:
   FormValidation
   FormValidationCss
   FormValidationOnSubmit
+  FormInputValidationOnBlur
 
 For template driven forms we need
 
@@ -207,4 +208,27 @@ css for form to show error on when form submitted
 }
 
 
+form submitted hadaling in component field
+  onSubmit(form:NgForm){
+    console.log(`in onSubmit:`, form.valid);
+    /* any complex logic can be wirtten here */
+  }
 
+Blur event html angular
+ <div class="form-group">
+      <label for="name">Name</label>
+      <input id="name" name="name" class="form-control" [(ngModel)] = "userSettings.name"
+       (blur)="onBlur(nameField)"
+       #classTest
+       #nameField="ngModel" required
+       [class.field-error]="form.submitted && nameField.invalid"/>
+       <div [hidden]="!form.submitted || nameField.valid" class="alert alert-danger">
+           Enter a name
+       </div>
+    </div>
+
+Blur event on typescript
+  onBlur(field:NgModel){
+    /* any type of complex validation can be done here */
+    console.log(`in onBlur`,field.valid)
+  }
