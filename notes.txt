@@ -1,6 +1,7 @@
 Branches:
   Master
   NgModel
+  FormValidation
 
 
 For template driven forms we need
@@ -99,4 +100,73 @@ copying of flat object
 
 deep clone of object
 use loaddash library
+
+Directive on from element to allow native html5 set ON in angular
+<form #form="ngForm" ngNativeValidate>
+---
+</form>
+
+touched classes for forms/input  in angular
+ng-untouched
+ng-touched
+
+ng-untouched class added when to input
+intially when forms input gets rendered
+
+ng-touched class added when to input
+input changed,tabed,submittion(directy) basically when blur happens
+
+Dirty classes for form/input in angular
+ng-pristine
+ng-dirty
+
+ng-pristine class
+ original value is not changed
+
+ng-dirty class
+ original vlaue is changed
+
+validation classes
+ ng-valid
+ ng-invalid
+
+ ng-dirty class won't get removed
+ even if you undo your change
+
+Printing out css classes applied by angular on input
+<div class="form-group">
+      <label for="name">Name</label>
+      <input id="name" name="name" class="form-control" [(ngModel)] = "userSettings.name" #classTest required/>
+    </div>
+    <h2>{{classTest.className}}</h2>
+
+
+
+ngModel object propertiy for touched input
+touched
+untouched
+
+ngModel object propertiy when values of input change
+pristine - no change
+dirty
+
+ngModel object propery for validation
+valid
+invalid
+
+printing ngModel properties for validatioon
+<div class="form-group">
+      <label for="name">Name</label>
+      <input id="name" name="name" class="form-control"
+       [(ngModel)] = "userSettings.name" #classTest required
+       #propertyTest="ngModel"/>
+    </div>
+    <h2>{{classTest.className}}</h2>
+    <h3>dirty : {{propertyTest.dirty}}</h3>
+    <h3>pristine : {{propertyTest.pristine}}</h3>
+    <h3>touched : {{propertyTest.touched}}</h3>
+    <h3>untouched : {{propertyTest.untouched}}</h3>
+    <h3>valid : {{propertyTest.valid}}</h3>
+    <h3>invalid : {{propertyTest.invalid}}</h3>
+
 
