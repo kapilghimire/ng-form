@@ -2,7 +2,8 @@ Branches:
   Master
   NgModel
   FormValidation
-
+  FormValidationCss
+  FormValidationOnSubmit
 
 For template driven forms we need
 
@@ -182,6 +183,26 @@ Showing validation error message of inputs using ngModel properties
 
 Css for highlighting input border for validation
 .ng-invalid:not(form).ng-touched{
+  border: 1px solid red;
+}
+
+
+form html to show error on when form submitted
+ <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input id="name" name="name" class="form-control" [(ngModel)] = "userSettings.name" #classTest
+       #nameField="ngModel" required
+       [class.field-error]="form.submitted && nameField.invalid"/>
+       <div [hidden]="!form.submitted || nameField.valid" class="alert alert-danger">
+           Enter a name
+       </div>
+    </div>
+
+
+css for form to show error on when form submitted
+.field-error{
   border: 1px solid red;
 }
 
