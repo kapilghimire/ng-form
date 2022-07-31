@@ -57,3 +57,15 @@ ngForm directive propertiy to get value on input binded witn ngModel directive
 <form #form="ngForm">
   <input id="name" name="name" class="form-control" ngModel/>
 
+
+Two way data binding
+<input id="name" name="name" class="form-control" [(ngModel)] = "userSettings.name"/>
+
+Output toway databind object property to html
+{{userSettings | json}}
+
+
+ToDo :
+ Create form submittion with using form template variable, one way binding , no [(ngModel)]
+
+ Create form submittion with toway data binding with [(ngModel)]

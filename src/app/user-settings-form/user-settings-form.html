@@ -5,7 +5,7 @@
 
     <div class="form-group">
       <label for="name">Name</label>
-      <input id="name" name="name" class="form-control" ngModel/>
+      <input id="name" name="name" class="form-control" [(ngModel)] = "userSettings.name"/>
     </div>
 
     <div class="form-check form-group">
@@ -53,7 +53,7 @@
     <div class="form-group">
       <label for="notes">Notes</label>
       <textarea id="notes" name="notes" class="form-control"
-                rows="3"></textarea>
+                rows="3" ngModel></textarea>
     </div>
 
     <button class="btn btn-primary">Send</button>
@@ -61,3 +61,5 @@
 </div>
 
 {{form.value|json}}
+
+{{userSettings | json}}
